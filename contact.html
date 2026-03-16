@@ -183,7 +183,10 @@
       <!-- Contact Form -->
       <div class="contact-form-wrapper fade-in">
         <h3>Send Us a Message</h3>
-        <form id="contactForm" novalidate>
+        <form id="contactForm">
+          <input type="hidden" name="access_key" value="90934852-c27d-40f9-870d-f1b35a2bef4e" />
+          <input type="hidden" name="subject" value="New Contact Form Submission – ClearFlow Plumbing" />
+          <input type="hidden" name="from_name" value="ClearFlow Plumbing Website" />
           <div class="form-row">
             <div class="form-group">
               <label for="firstName">First Name *</label>
@@ -230,10 +233,16 @@
             </label>
           </div>
 
-          <button type="submit" class="btn btn-primary btn-lg" style="width:100%;">Send Message →</button>
+          <button type="submit" id="submitBtn" class="btn btn-primary btn-lg" style="width:100%;">Send Message →</button>
 
-          <div class="form-success" id="formSuccess">
-            ✅ Thank you! We received your message and will be in touch within a few hours.
+          <div id="formSuccess" style="display:none;background:#e8f5e9;border:1.5px solid #4caf50;border-radius:var(--radius);padding:1.25rem 1.5rem;margin-top:1.25rem;color:#1b5e20;">
+            <div style="font-size:1.5rem;margin-bottom:0.5rem;">✅</div>
+            <strong style="display:block;font-size:1rem;margin-bottom:0.25rem;">Message sent successfully!</strong>
+            <span style="font-size:0.92rem;">Thank you! We received your message and will be in touch within a few hours. For urgent issues, call <a href="tel:+15551234567" style="color:#1b5e20;font-weight:700;">(555) 123-4567</a>.</span>
+          </div>
+
+          <div id="formError" style="display:none;background:#fdecea;border:1.5px solid #ef5350;border-radius:var(--radius);padding:1rem 1.25rem;margin-top:1.25rem;color:#b71c1c;font-size:0.92rem;">
+            ⚠️ Something went wrong. Please try again or call us directly at (555) 123-4567.
           </div>
         </form>
       </div>
@@ -359,13 +368,56 @@
 
 <script src="js/main.js"></script>
 <script>
+  // ===== WEB3FORMS SUBMISSION =====
+  const contactForm = document.getElementById('contactForm');
+  const submitBtn   = document.getElementById('submitBtn');
+  const successBox  = document.getElementById('formSuccess');
+  const errorBox    = document.getElementById('formError');
+
+  contactForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    // Combine first + last name into a single "name" field for Web3Forms
+    const firstName = contactForm.querySelector('[name="firstName"]').value.trim();
+    const lastName  = contactForm.querySelector('[name="lastName"]').value.trim();
+
+    const data = new FormData(contactForm);
+    data.set('name', `${firstName} ${lastName}`.trim());
+    data.delete('firstName');
+    data.delete('lastName');
+
+    submitBtn.disabled    = true;
+    submitBtn.textContent = 'Sending…';
+    errorBox.style.display   = 'none';
+    successBox.style.display = 'none';
+
+    try {
+      const res    = await fetch('https://api.web3forms.com/submit', { method: 'POST', body: data });
+      const result = await res.json();
+
+      if (result.success) {
+        successBox.style.display = 'block';
+        contactForm.reset();
+        successBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      } else {
+        errorBox.textContent   = '⚠️ ' + (result.message || 'Submission failed. Please try again.');
+        errorBox.style.display = 'block';
+      }
+    } catch (err) {
+      errorBox.textContent   = '⚠️ Network error. Please check your connection and try again.';
+      errorBox.style.display = 'block';
+    }
+
+    submitBtn.disabled    = false;
+    submitBtn.textContent = 'Send Message →';
+  });
+
+  // ===== FAQ ACCORDION =====
   function toggleFaq(btn) {
     const answer = btn.nextElementSibling;
     const isOpen = btn.classList.contains('open');
-    // Close all
     document.querySelectorAll('.faq-question').forEach(q => q.classList.remove('open'));
     document.querySelectorAll('.faq-answer').forEach(a => a.classList.remove('open'));
-    // Open clicked one (unless it was already open)
     if (!isOpen) {
       btn.classList.add('open');
       answer.classList.add('open');
