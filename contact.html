@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us – ClearFlow Plumbing</title>
+  <meta name="description" content="Contact ClearFlow Plumbing for a free estimate or emergency service. Call (555) 123-4567 or use our online form." />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .fade-in { opacity: 0; transform: translateY(24px); transition: opacity 0.55s ease, transform 0.55s ease; }
+    .fade-in.visible { opacity: 1; transform: none; }
+
+    .map-placeholder {
+      background: linear-gradient(135deg, #e8e8e8 0%, #d0d0d0 100%);
+      border-radius: var(--radius);
+      height: 280px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      color: var(--gray);
+      border: 2px dashed #bbb;
+      margin-top: 2rem;
+      font-size: 0.95rem;
+      text-align: center;
+      padding: 1.5rem;
+    }
+    .map-placeholder .map-icon { font-size: 3rem; }
+
+    .hours-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+    }
+    .hours-table tr { border-bottom: 1px solid var(--gray-light); }
+    .hours-table tr:last-child { border-bottom: none; }
+    .hours-table td {
+      padding: 0.55rem 0;
+      font-size: 0.92rem;
+      color: var(--gray-dark);
+    }
+    .hours-table td:last-child {
+      text-align: right;
+      font-weight: 600;
+    }
+    .hours-open { color: #2e7d32; }
+    .hours-emergency { color: var(--red); font-weight: 700; }
+
+    .faq-list { display: flex; flex-direction: column; gap: 1rem; }
+    .faq-item {
+      border: 1.5px solid #e0e0e0;
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+    .faq-question {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 1.25rem;
+      background: var(--white);
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 0.95rem;
+      gap: 1rem;
+      transition: background var(--transition);
+      border: none;
+      width: 100%;
+      text-align: left;
+      color: var(--gray-dark);
+    }
+    .faq-question:hover { background: var(--gray-light); }
+    .faq-question.open { background: var(--red); color: var(--white); }
+    .faq-arrow {
+      flex-shrink: 0;
+      font-size: 0.8rem;
+      transition: transform var(--transition);
+    }
+    .faq-question.open .faq-arrow { transform: rotate(180deg); }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease, padding 0.25s ease;
+      padding: 0 1.25rem;
+      font-size: 0.92rem;
+      color: var(--gray);
+      background: var(--off-white);
+    }
+    .faq-answer.open {
+      max-height: 200px;
+      padding: 1rem 1.25rem;
+    }
+  </style>
+</head>
+<body>
+
+<div class="emergency-strip">
+  🚨 24/7 Emergency Plumbing Available — Call <a href="tel:+15551234567">(555) 123-4567</a>
+</div>
+
+<nav class="navbar">
+  <a href="index.html" class="nav-brand">
+    <span class="brand-icon">🔧</span>
+    ClearFlow Plumbing
+  </a>
+  <button class="hamburger" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="tel:+15551234567" class="btn btn-primary">📞 Call Now</a></li>
+  </ul>
+</nav>
+
+<!-- Page Hero -->
+<section class="page-hero">
+  <div class="container">
+    <h1>Contact Us</h1>
+    <p>Get a free estimate, book a service, or reach our emergency line anytime.</p>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section class="section">
+  <div class="container">
+    <div class="contact-grid">
+
+      <!-- Contact Info -->
+      <div class="contact-info fade-in">
+        <h2>Get in Touch</h2>
+        <p>Whether it's a dripping faucet or a burst pipe, we're here to help. Call us for the fastest response, or fill out the form and we'll get back to you within a few hours.</p>
+
+        <div class="contact-details">
+          <div class="contact-item">
+            <div class="ci-icon">📞</div>
+            <div class="ci-text">
+              <strong>Phone</strong>
+              <span><a href="tel:+15551234567">(555) 123-4567</a></span>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="ci-icon">✉️</div>
+            <div class="ci-text">
+              <strong>Email</strong>
+              <span><a href="mailto:info@clearflowplumbing.com">info@clearflowplumbing.com</a></span>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="ci-icon">📍</div>
+            <div class="ci-text">
+              <strong>Address</strong>
+              <span>412 Waterway Blvd, Columbus, OH 43215</span>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="ci-icon">🚨</div>
+            <div class="ci-text">
+              <strong>Emergency Line</strong>
+              <span><a href="tel:+15551234567">(555) 123-4567</a> — Available 24/7</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hours -->
+        <h3 style="margin-bottom:0.5rem;">Business Hours</h3>
+        <table class="hours-table">
+          <tr><td>Monday – Friday</td><td class="hours-open">7:00 AM – 8:00 PM</td></tr>
+          <tr><td>Saturday</td><td class="hours-open">8:00 AM – 6:00 PM</td></tr>
+          <tr><td>Sunday</td><td class="hours-open">8:00 AM – 4:00 PM</td></tr>
+          <tr><td>Holidays</td><td class="hours-emergency">Emergency Only</td></tr>
+        </table>
+
+        <div class="map-placeholder">
+          <div class="map-icon">🗺️</div>
+          <strong>412 Waterway Blvd, Columbus, OH 43215</strong>
+          <span>Serving all of Central Ohio</span>
+        </div>
+      </div>
+
+      <!-- Contact Form -->
+      <div class="contact-form-wrapper fade-in">
+        <h3>Send Us a Message</h3>
+        <form id="contactForm" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="firstName">First Name *</label>
+              <input type="text" id="firstName" name="firstName" placeholder="John" required />
+            </div>
+            <div class="form-group">
+              <label for="lastName">Last Name *</label>
+              <input type="text" id="lastName" name="lastName" placeholder="Smith" required />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Phone Number *</label>
+            <input type="tel" id="phone" name="phone" placeholder="(555) 000-0000" required />
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email Address *</label>
+            <input type="email" id="email" name="email" placeholder="john@example.com" required />
+          </div>
+
+          <div class="form-group">
+            <label for="service">Service Needed</label>
+            <select id="service" name="service">
+              <option value="">— Select a service —</option>
+              <option value="drain">Drain Cleaning</option>
+              <option value="pipe">Pipe Repair / Replacement</option>
+              <option value="waterheater">Water Heater Installation</option>
+              <option value="emergency">Emergency Plumbing</option>
+              <option value="leak">Leak Detection</option>
+              <option value="other">Other / Not Sure</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message *</label>
+            <textarea id="message" name="message" placeholder="Describe your plumbing issue or question. The more detail, the better!" required></textarea>
+          </div>
+
+          <div class="form-group" style="flex-direction:row;align-items:center;gap:0.6rem;">
+            <input type="checkbox" id="emergency-check" name="emergency" style="width:18px;height:18px;accent-color:var(--red);flex-shrink:0;" />
+            <label for="emergency-check" style="font-weight:400;font-size:0.9rem;cursor:pointer;">
+              This is an emergency — please call me as soon as possible.
+            </label>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-lg" style="width:100%;">Send Message →</button>
+
+          <div class="form-success" id="formSuccess">
+            ✅ Thank you! We received your message and will be in touch within a few hours.
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section section-alt">
+  <div class="container" style="max-width:760px;">
+    <h2 class="section-title">Frequently Asked Questions</h2>
+    <p class="section-subtitle">Quick answers to the questions we hear most often.</p>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          Do you offer free estimates?
+          <span class="faq-arrow">▼</span>
+        </button>
+        <div class="faq-answer">
+          Yes! We provide free, no-obligation estimates for all non-emergency plumbing work. A licensed plumber will assess the problem and give you a clear written quote before any work begins.
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          How quickly can you respond to an emergency?
+          <span class="faq-arrow">▼</span>
+        </button>
+        <div class="faq-answer">
+          Our emergency response team is on call 24/7. For most service areas in central Ohio, we aim to be on-site within 60 minutes. Call (555) 123-4567 for the fastest response.
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          Are your plumbers licensed and insured?
+          <span class="faq-arrow">▼</span>
+        </button>
+        <div class="faq-answer">
+          Absolutely. Every ClearFlow plumber holds an active Ohio state plumbing license and is fully insured with liability coverage. We also conduct background checks on all employees.
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          What areas do you serve?
+          <span class="faq-arrow">▼</span>
+        </button>
+        <div class="faq-answer">
+          We serve all of central Ohio, including Columbus, Westerville, Dublin, Gahanna, Grove City, Hilliard, New Albany, Powell, and surrounding communities. Call us to confirm service in your area.
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          Do you guarantee your work?
+          <span class="faq-arrow">▼</span>
+        </button>
+        <div class="faq-answer">
+          Yes. All ClearFlow plumbing work is backed by a 1-year workmanship guarantee. If something we repaired fails within a year due to our workmanship, we'll come back and fix it at no charge.
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          Do you work on weekends?
+          <span class="faq-arrow">▼</span>
+        </button>
+        <div class="faq-answer">
+          Yes. We're open Saturday 8am–6pm and Sunday 8am–4pm for regular appointments. Emergency service is available around the clock, every day of the year.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Banner -->
+<section class="cta-banner">
+  <div class="container">
+    <h2>Don't Let a Plumbing Problem Wait</h2>
+    <p>Small leaks become big damage. Call us today and get it resolved.</p>
+    <div class="cta-buttons">
+      <a href="tel:+15551234567" class="btn btn-outline btn-lg">📞 Call (555) 123-4567</a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="nav-brand"><span>🔧</span> ClearFlow Plumbing</div>
+      <p>Serving the greater Ohio area since 2003. Licensed, insured, and committed to doing the job right the first time.</p>
+    </div>
+    <div>
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Services</h4>
+      <ul>
+        <li><a href="services.html">Drain Cleaning</a></li>
+        <li><a href="services.html">Pipe Repair</a></li>
+        <li><a href="services.html">Water Heaters</a></li>
+        <li><a href="services.html">Emergency Plumbing</a></li>
+        <li><a href="services.html">Leak Detection</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contact Us</h4>
+      <div class="footer-contact-item"><span class="fc-icon">📞</span> (555) 123-4567</div>
+      <div class="footer-contact-item"><span class="fc-icon">✉️</span> info@clearflowplumbing.com</div>
+      <div class="footer-contact-item"><span class="fc-icon">📍</span> 412 Waterway Blvd,<br>Columbus, OH 43215</div>
+      <div class="footer-contact-item"><span class="fc-icon">🕐</span> Mon–Fri: 7am–8pm<br>Sat–Sun: 8am–6pm</div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 ClearFlow Plumbing. All rights reserved.</span>
+    <span>Designed with ❤️ for our community</span>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+  function toggleFaq(btn) {
+    const answer = btn.nextElementSibling;
+    const isOpen = btn.classList.contains('open');
+    // Close all
+    document.querySelectorAll('.faq-question').forEach(q => q.classList.remove('open'));
+    document.querySelectorAll('.faq-answer').forEach(a => a.classList.remove('open'));
+    // Open clicked one (unless it was already open)
+    if (!isOpen) {
+      btn.classList.add('open');
+      answer.classList.add('open');
+    }
+  }
+</script>
+</body>
+</html>

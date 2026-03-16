@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us – ClearFlow Plumbing</title>
+  <meta name="description" content="Meet the team behind ClearFlow Plumbing. Family-owned and operated since 2003, serving Ohio with honest, expert plumbing service." />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .fade-in { opacity: 0; transform: translateY(24px); transition: opacity 0.55s ease, transform 0.55s ease; }
+    .fade-in.visible { opacity: 1; transform: none; }
+
+    .owner-story {
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+      gap: 4rem;
+      align-items: center;
+      margin-bottom: 5rem;
+    }
+    .owner-photo {
+      background: linear-gradient(160deg, #e0e0e0 0%, #bdbdbd 100%);
+      border-radius: var(--radius);
+      height: 460px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      border: 3px solid var(--red);
+      position: relative;
+      overflow: hidden;
+    }
+    .owner-photo::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 6px;
+      background: var(--red);
+    }
+    .owner-photo .photo-icon { font-size: 7rem; }
+    .owner-photo .photo-label {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--gray-dark);
+    }
+    .owner-photo .photo-sub {
+      font-size: 0.85rem;
+      color: var(--gray);
+    }
+
+    .owner-story-text blockquote {
+      border-left: 4px solid var(--red);
+      padding: 1rem 1.25rem;
+      background: var(--off-white);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      font-style: italic;
+      color: var(--gray-dark);
+      margin: 1.5rem 0;
+      font-size: 1.05rem;
+    }
+
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.75rem;
+    }
+    .value-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 2rem 1.5rem;
+      text-align: center;
+      box-shadow: var(--shadow);
+      border-bottom: 4px solid var(--red);
+    }
+    .value-card .v-icon { font-size: 2.5rem; margin-bottom: 1rem; }
+    .value-card h3 { color: var(--red); margin-bottom: 0.5rem; }
+    .value-card p { color: var(--gray); font-size: 0.92rem; }
+
+    .timeline {
+      position: relative;
+      padding-left: 2.5rem;
+      border-left: 3px solid var(--red);
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+    .timeline-item {
+      position: relative;
+    }
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -2.85rem;
+      top: 0.35rem;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: var(--red);
+      border: 3px solid var(--white);
+      box-shadow: 0 0 0 2px var(--red);
+    }
+    .timeline-year {
+      display: inline-block;
+      background: var(--red);
+      color: var(--white);
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 0.2rem 0.65rem;
+      border-radius: 50px;
+      margin-bottom: 0.4rem;
+    }
+    .timeline-item h3 { font-size: 1.05rem; margin-bottom: 0.25rem; }
+    .timeline-item p { color: var(--gray); font-size: 0.9rem; }
+
+    @media (max-width: 780px) {
+      .owner-story { grid-template-columns: 1fr; }
+      .owner-photo { height: 260px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="emergency-strip">
+  🚨 24/7 Emergency Plumbing Available — Call <a href="tel:+15551234567">(555) 123-4567</a>
+</div>
+
+<nav class="navbar">
+  <a href="index.html" class="nav-brand">
+    <span class="brand-icon">🔧</span>
+    ClearFlow Plumbing
+  </a>
+  <button class="hamburger" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="tel:+15551234567" class="btn btn-primary">📞 Call Now</a></li>
+  </ul>
+</nav>
+
+<!-- Page Hero -->
+<section class="page-hero">
+  <div class="container">
+    <h1>About ClearFlow Plumbing</h1>
+    <p>Family-owned. Community-focused. Over 20 years of trusted service.</p>
+  </div>
+</section>
+
+<!-- Owner Story -->
+<section class="section">
+  <div class="container">
+    <div class="owner-story fade-in">
+      <div class="owner-photo">
+        <div class="photo-icon">👷</div>
+        <div class="photo-label">Mike Hargrove</div>
+        <div class="photo-sub">Founder &amp; Master Plumber</div>
+      </div>
+      <div class="owner-story-text">
+        <h2>From an Apprentice's Wrench to a Trusted Business</h2>
+        <p>My name is <strong>Mike Hargrove</strong>, and I've been a plumber my whole adult life. I grew up in Columbus watching my father fix things with his hands — he always said "if something's broken, learn how to fix it." That stuck with me.</p>
+
+        <blockquote>"I started this company because I was tired of seeing homeowners get overcharged and underserved. You deserve to know exactly what you're paying for — and to have it done right."</blockquote>
+
+        <p>I started as an apprentice at 18, sweating pipes in attics during Ohio summers and crawling under houses in January. I earned my journeyman license at 22 and my master plumber's license at 26. By 2003, I had saved enough to buy one van, a set of tools, and a dream.</p>
+
+        <p>I started ClearFlow Plumbing out of that single van with a simple promise: honest pricing, quality work, and showing up when we say we will. Word spread fast in the neighborhood, and within two years I had to hire my first employee — my brother-in-law, Dave.</p>
+
+        <p>Today, ClearFlow has grown to a team of 14 licensed plumbers, two office staff, and a fleet of fully-stocked service vans. We've completed over 2,000 jobs across central Ohio. But our core promise hasn't changed one bit.</p>
+
+        <div class="about-highlights">
+          <div class="highlight-item">
+            <span class="hi-icon">🏆</span>
+            <p><strong>Master Plumber Certified</strong> — Mike holds Ohio State Master Plumbing License #MP-48820 and is a member of the Plumbing-Heating-Cooling Contractors Association.</p>
+          </div>
+          <div class="highlight-item">
+            <span class="hi-icon">🌍</span>
+            <p><strong>Community Roots</strong> — We live and work here. We sponsor the Riverside Little League, donate to the local food bank, and fix plumbing for seniors at reduced cost through our Neighbor Assist program.</p>
+          </div>
+          <div class="highlight-item">
+            <span class="hi-icon">📚</span>
+            <p><strong>Continuing Education</strong> — Our plumbers complete annual training on new technologies, code updates, and green plumbing practices to keep your home current.</p>
+          </div>
+        </div>
+
+        <a href="contact.html" class="btn btn-primary btn-lg">Get in Touch With Our Team</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Our Values -->
+<section class="section section-alt">
+  <div class="container">
+    <h2 class="section-title">Our Core Values</h2>
+    <p class="section-subtitle">Everything we do is guided by these four principles.</p>
+    <div class="values-grid">
+      <div class="value-card fade-in">
+        <div class="v-icon">🤝</div>
+        <h3>Honesty</h3>
+        <p>We tell you exactly what's wrong, what it'll cost, and why — before we touch a single pipe. No upselling, no fear tactics.</p>
+      </div>
+      <div class="value-card fade-in">
+        <div class="v-icon">⭐</div>
+        <h3>Excellence</h3>
+        <p>We don't patch — we fix. Every job is done to code, using quality materials, and backed by our 1-year guarantee.</p>
+      </div>
+      <div class="value-card fade-in">
+        <div class="v-icon">⏰</div>
+        <h3>Reliability</h3>
+        <p>When we say we'll be there, we're there. On time, every time. Your schedule matters as much as ours.</p>
+      </div>
+      <div class="value-card fade-in">
+        <div class="v-icon">❤️</div>
+        <h3>Community</h3>
+        <p>We're your neighbors first, plumbers second. We give back to the community that built us.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Team -->
+<section class="section">
+  <div class="container">
+    <h2 class="section-title">Meet the Team</h2>
+    <p class="section-subtitle">Licensed professionals who take pride in their craft.</p>
+    <div class="team-grid">
+      <div class="team-card fade-in">
+        <div class="team-avatar">MH</div>
+        <h3>Mike Hargrove</h3>
+        <div class="role">Founder &amp; Master Plumber</div>
+        <p>20+ years experience. Specializes in complex pipe re-piping and commercial installs.</p>
+      </div>
+      <div class="team-card fade-in">
+        <div class="team-avatar">DW</div>
+        <h3>Dave Wallace</h3>
+        <div class="role">Senior Plumber</div>
+        <p>Mike's right-hand man since 2005. Expert in water heater systems and boiler repair.</p>
+      </div>
+      <div class="team-card fade-in">
+        <div class="team-avatar">RC</div>
+        <h3>Rosa Chen</h3>
+        <div class="role">Leak Detection Specialist</div>
+        <p>Certified in acoustic and thermal imaging leak detection. 12 years in the field.</p>
+      </div>
+      <div class="team-card fade-in">
+        <div class="team-avatar">TJ</div>
+        <h3>Tyler Johnson</h3>
+        <div class="role">Emergency Response Lead</div>
+        <p>Heads our 24/7 emergency crew. Calm under pressure and fast on his feet.</p>
+      </div>
+      <div class="team-card fade-in">
+        <div class="team-avatar">AP</div>
+        <h3>Angela Perez</h3>
+        <div class="role">Office Manager</div>
+        <p>Keeps the whole operation running smoothly. Your first point of contact when you call.</p>
+      </div>
+      <div class="team-card fade-in">
+        <div class="team-avatar">JM</div>
+        <h3>James Morley</h3>
+        <div class="role">Journeyman Plumber</div>
+        <p>Specializes in bathroom and kitchen remodel plumbing. Meticulous and detail-oriented.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Company Timeline -->
+<section class="section section-alt">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;">
+      <div class="fade-in">
+        <h2 style="margin-bottom:2rem;">Our Journey</h2>
+        <div class="timeline">
+          <div class="timeline-item">
+            <span class="timeline-year">2003</span>
+            <h3>ClearFlow Founded</h3>
+            <p>Mike Hargrove starts the company solo with one van and a phone number painted on the side.</p>
+          </div>
+          <div class="timeline-item">
+            <span class="timeline-year">2006</span>
+            <h3>First Office &amp; Three Vans</h3>
+            <p>Growing demand leads to a small office on Broad Street and three full-time plumbers.</p>
+          </div>
+          <div class="timeline-item">
+            <span class="timeline-year">2010</span>
+            <h3>Commercial Division Launched</h3>
+            <p>ClearFlow expands into commercial plumbing, landing contracts with local restaurants and offices.</p>
+          </div>
+          <div class="timeline-item">
+            <span class="timeline-year">2015</span>
+            <h3>Leak Detection Technology</h3>
+            <p>We invest in state-of-the-art leak detection equipment and hire Rosa Chen as our specialist.</p>
+          </div>
+          <div class="timeline-item">
+            <span class="timeline-year">2020</span>
+            <h3>Neighbor Assist Program</h3>
+            <p>Launch of our discounted plumbing program for seniors and low-income households.</p>
+          </div>
+          <div class="timeline-item">
+            <span class="timeline-year">2026</span>
+            <h3>14 Plumbers &amp; Growing</h3>
+            <p>Now serving all of central Ohio with a fleet of 10 vans and a 24/7 emergency line.</p>
+          </div>
+        </div>
+      </div>
+      <div class="fade-in">
+        <h2 style="margin-bottom:1.5rem;">By the Numbers</h2>
+        <div style="display:flex;flex-direction:column;gap:1.25rem;">
+          <div class="why-card" style="text-align:left;display:flex;align-items:center;gap:1.25rem;padding:1.25rem 1.5rem;">
+            <span style="font-size:2.2rem;">🔧</span>
+            <div>
+              <div style="font-size:1.8rem;font-weight:800;color:var(--red);">2,000+</div>
+              <div style="color:var(--gray);font-size:0.9rem;">Jobs completed since founding</div>
+            </div>
+          </div>
+          <div class="why-card" style="text-align:left;display:flex;align-items:center;gap:1.25rem;padding:1.25rem 1.5rem;">
+            <span style="font-size:2.2rem;">👷</span>
+            <div>
+              <div style="font-size:1.8rem;font-weight:800;color:var(--red);">14</div>
+              <div style="color:var(--gray);font-size:0.9rem;">Licensed, background-checked plumbers</div>
+            </div>
+          </div>
+          <div class="why-card" style="text-align:left;display:flex;align-items:center;gap:1.25rem;padding:1.25rem 1.5rem;">
+            <span style="font-size:2.2rem;">⭐</span>
+            <div>
+              <div style="font-size:1.8rem;font-weight:800;color:var(--red);">4.9 / 5</div>
+              <div style="color:var(--gray);font-size:0.9rem;">Average Google review rating (620 reviews)</div>
+            </div>
+          </div>
+          <div class="why-card" style="text-align:left;display:flex;align-items:center;gap:1.25rem;padding:1.25rem 1.5rem;">
+            <span style="font-size:2.2rem;">🏠</span>
+            <div>
+              <div style="font-size:1.8rem;font-weight:800;color:var(--red);">500+</div>
+              <div style="color:var(--gray);font-size:0.9rem;">Seniors helped through Neighbor Assist</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Banner -->
+<section class="cta-banner">
+  <div class="container">
+    <h2>Ready to Work With a Team You Can Trust?</h2>
+    <p>Join thousands of satisfied customers across central Ohio.</p>
+    <div class="cta-buttons">
+      <a href="tel:+15551234567" class="btn btn-outline btn-lg">📞 (555) 123-4567</a>
+      <a href="contact.html" class="btn btn-primary btn-lg" style="background:#fff;color:var(--red);">Book a Service</a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="nav-brand"><span>🔧</span> ClearFlow Plumbing</div>
+      <p>Serving the greater Ohio area since 2003. Licensed, insured, and committed to doing the job right the first time.</p>
+    </div>
+    <div>
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Services</h4>
+      <ul>
+        <li><a href="services.html">Drain Cleaning</a></li>
+        <li><a href="services.html">Pipe Repair</a></li>
+        <li><a href="services.html">Water Heaters</a></li>
+        <li><a href="services.html">Emergency Plumbing</a></li>
+        <li><a href="services.html">Leak Detection</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contact Us</h4>
+      <div class="footer-contact-item"><span class="fc-icon">📞</span> (555) 123-4567</div>
+      <div class="footer-contact-item"><span class="fc-icon">✉️</span> info@clearflowplumbing.com</div>
+      <div class="footer-contact-item"><span class="fc-icon">📍</span> 412 Waterway Blvd,<br>Columbus, OH 43215</div>
+      <div class="footer-contact-item"><span class="fc-icon">🕐</span> Mon–Fri: 7am–8pm<br>Sat–Sun: 8am–6pm</div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 ClearFlow Plumbing. All rights reserved.</span>
+    <span>Designed with ❤️ for our community</span>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
