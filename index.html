@@ -4,96 +4,142 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ClearFlow Plumbing – Your Local Plumbing Experts</title>
-  <meta name="description" content="ClearFlow Plumbing offers fast, reliable plumbing services including drain cleaning, pipe repair, water heater installation and 24/7 emergency plumbing." />
+  <meta name="description" content="ClearFlow Plumbing. Fast, reliable, and honest plumbing for every home and business in central Ohio." />
   <link rel="stylesheet" href="css/style.css" />
   <style>
-    .fade-in { opacity: 0; transform: translateY(28px); transition: opacity 0.6s ease, transform 0.6s ease; }
-    .fade-in.visible { opacity: 1; transform: none; }
+    /* ---- HOMEPAGE-SPECIFIC ---- */
 
-    /* Section divider accent */
-    .section-eyebrow {
-      display: inline-block;
-      background: #fff0f0;
-      color: var(--red);
-      font-size: 0.78rem;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      padding: 0.3rem 0.9rem;
-      border-radius: 50px;
-      margin-bottom: 0.75rem;
-    }
-    .section-title-group { text-align: center; margin-bottom: 3.5rem; }
-    .section-title-group .section-title  { margin-bottom: 0.5rem; }
-    .section-title-group .section-subtitle { margin-bottom: 0; }
-
-    /* Testimonials — upgrade */
-    .testimonials-section {
-      background: linear-gradient(160deg, #1a0000 0%, var(--red-dark) 40%, #c62828 100%);
-      padding: 5.5rem 1.5rem;
-    }
-    .testimonials-section .section-eyebrow { background: rgba(255,255,255,0.15); color: #ffcdd2; }
-    .testimonials-section .section-title  { color: var(--white); }
-    .testimonials-section .section-subtitle { color: rgba(255,255,255,0.72); }
-    .testimonial-card-v2 {
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.14);
-      border-radius: 16px;
-      padding: 2rem;
-      backdrop-filter: blur(6px);
-    }
-    .testimonial-card-v2 .stars  { color: #fbbf24; font-size: 1rem; margin-bottom: 1rem; }
-    .testimonial-card-v2 p { color: rgba(255,255,255,0.85); font-style: italic; font-size: 0.95rem; line-height: 1.75; margin-bottom: 1.5rem; }
-    .testimonial-card-v2 .reviewer-avatar { background: rgba(255,255,255,0.18); border: 1px solid rgba(255,255,255,0.2); }
-    .testimonial-card-v2 .reviewer-name  { color: var(--white); }
-    .testimonial-card-v2 .reviewer-loc   { color: rgba(255,255,255,0.55); }
-
-    /* Services section background */
-    .services-section { background: var(--off-white); }
-
-    /* CTA banner upgrade */
-    .cta-banner-v2 {
-      background: var(--white);
-      padding: 5.5rem 1.5rem;
+    /* Hero */
+    .hero {
+      padding: 100px 24px 80px;
       text-align: center;
+      background: var(--white);
     }
-    .cta-banner-v2 h2 { margin-bottom: 0.75rem; }
-    .cta-banner-v2 .cta-sub { color: var(--gray); font-size: 1.05rem; margin-bottom: 2.5rem; max-width: 520px; margin-left: auto; margin-right: auto; }
-    .cta-inner-box {
-      background: linear-gradient(135deg, var(--red-dark) 0%, var(--red) 100%);
-      border-radius: 20px;
-      padding: 3.5rem 2.5rem;
-      max-width: 860px;
-      margin: 0 auto;
-      box-shadow: 0 20px 56px rgba(211,47,47,0.3);
+    .hero h1 { max-width: 820px; margin: 0 auto 1.5rem; }
+    .hero .subhead { margin: 0 auto 2.5rem; max-width: 520px; }
+    .hero-buttons { display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap; }
+
+    /* Cinematic full-width visual */
+    .hero-cinematic {
+      width: 100%;
+      background: linear-gradient(170deg, #1d1d1f 0%, #2a2a2c 55%, #1a1a1c 100%);
+      min-height: 480px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1.25rem;
       position: relative;
       overflow: hidden;
     }
-    .cta-inner-box::before {
+    .hero-cinematic::before {
       content: '';
       position: absolute;
-      top: -80px; right: -80px;
-      width: 280px; height: 280px;
-      background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 65%);
-      border-radius: 50%;
+      inset: 0;
+      background: radial-gradient(ellipse at 60% 40%, rgba(201,34,34,0.12) 0%, transparent 65%);
     }
-    .cta-inner-box h2 { color: var(--white); margin-bottom: 0.75rem; }
-    .cta-inner-box p  { color: rgba(255,255,255,0.85); font-size: 1.05rem; margin-bottom: 2rem; }
-    .cta-inner-box .cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; position: relative; z-index: 1; }
+    .hero-cinematic-icon {
+      font-size: 7rem;
+      filter: drop-shadow(0 20px 40px rgba(0,0,0,0.5));
+      position: relative;
+      z-index: 1;
+    }
+    .hero-cinematic-label {
+      font-size: 0.8rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: rgba(255,255,255,0.35);
+      position: relative;
+      z-index: 1;
+    }
+    .hero-cinematic-pills {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      position: relative;
+      z-index: 1;
+      margin-top: 0.5rem;
+    }
+    .hero-pill {
+      display: flex; align-items: center; gap: 0.5rem;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: var(--radius-pill);
+      padding: 0.45rem 1.1rem;
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.72);
+      font-weight: 500;
+    }
+
+    /* Feature strip */
+    .feature-strip {
+      border-top: 1px solid var(--gray-border);
+      border-bottom: 1px solid var(--gray-border);
+    }
+
+    /* Why section headline group */
+    .why-intro { margin-bottom: 0; padding-bottom: 4rem; }
+
+    /* Services section */
+    .services-section-label {
+      display: flex; justify-content: space-between; align-items: baseline;
+      margin-bottom: 2.5rem;
+    }
+
+    /* Cinematic quote block */
+    .quote-section {
+      padding: 120px 24px;
+      background: var(--black);
+      text-align: center;
+    }
+    .quote-section blockquote {
+      font-size: clamp(1.5rem, 4vw, 2.8rem);
+      font-weight: 600;
+      letter-spacing: -0.025em;
+      line-height: 1.2;
+      color: var(--white);
+      max-width: 860px;
+      margin: 0 auto 1.25rem;
+    }
+    .quote-section cite {
+      font-style: normal;
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.4);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+
+    /* CTA section */
+    .cta-section {
+      padding: 120px 24px;
+      text-align: center;
+      background: var(--gray-bg);
+    }
+    .cta-section h2   { margin-bottom: 1rem; }
+    .cta-section .subhead { margin-bottom: 2.5rem; }
+    .cta-section-buttons { display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap; }
+
+    @media (max-width: 640px) {
+      .hero { padding: 72px 20px 60px; }
+      .hero-cinematic { min-height: 320px; }
+      .hero-cinematic-icon { font-size: 5rem; }
+      .quote-section { padding: 80px 20px; }
+      .cta-section { padding: 80px 20px; }
+    }
   </style>
 </head>
 <body>
 
-<!-- Emergency Strip -->
 <div class="emergency-strip">
-  🚨 24/7 Emergency Plumbing Available — Call <a href="tel:+15551234567">(555) 123-4567</a>
+  24/7 Emergency Service — <a href="tel:+15551234567">(555) 123-4567</a>
 </div>
 
-<!-- Navbar -->
 <nav class="navbar">
   <a href="index.html" class="nav-brand">
-    <span class="brand-icon">🔧</span>
-    ClearFlow Plumbing
+    <span class="brand-icon">🔧</span> ClearFlow Plumbing
   </a>
   <button class="hamburger" aria-label="Toggle menu">
     <span></span><span></span><span></span>
@@ -101,257 +147,202 @@
   <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
     <li><a href="services.html">Services</a></li>
-    <li><a href="about.html">About Us</a></li>
+    <li><a href="about.html">About</a></li>
     <li><a href="contact.html">Contact</a></li>
-    <li><a href="tel:+15551234567" class="btn btn-primary">📞 Call Now</a></li>
+    <li><a href="tel:+15551234567" class="nav-cta">Call Now</a></li>
   </ul>
 </nav>
 
-<!-- ===================== HERO ===================== -->
+<!-- HERO -->
 <section class="hero">
-  <div class="hero-inner">
-
-    <!-- Left: Text -->
-    <div class="hero-text">
-      <span class="hero-badge">⭐ Licensed &amp; Insured Since 2003</span>
-      <h1>
-        Your Local
-        <span class="hero-accent">Plumbing Experts</span>
-      </h1>
-      <p>Fast, reliable, and affordable plumbing for every home and business. We're on call 24/7 — because leaks don't wait for business hours.</p>
-      <div class="hero-buttons">
-        <a href="tel:+15551234567" class="btn btn-call btn-lg">📞 Call Now — It's Free</a>
-        <a href="services.html" class="btn btn-hero-ghost btn-lg">Our Services →</a>
-      </div>
-      <div class="hero-trust">
-        <span>Licensed &amp; Insured</span>
-        <span>No Hidden Fees</span>
-        <span>Same-Day Service</span>
-        <span>1-Year Guarantee</span>
-      </div>
-    </div>
-
-    <!-- Right: Visual card -->
-    <div class="hero-visual">
-      <div class="hero-img-frame">
-        <div class="hero-img-icon">🔧</div>
-        <div class="hero-img-title">ClearFlow Plumbing</div>
-        <div class="hero-img-sub">Serving Central Ohio since 2003</div>
-        <div class="hero-badges-list">
-          <div class="hero-badge-item">
-            <div class="hero-badge-icon">⚡</div>
-            60-Minute Emergency Response
-          </div>
-          <div class="hero-badge-item">
-            <div class="hero-badge-icon">🏅</div>
-            Master-Licensed Plumbers
-          </div>
-          <div class="hero-badge-item">
-            <div class="hero-badge-icon">💯</div>
-            4.9★ — 620+ Reviews
-          </div>
-          <div class="hero-badge-item">
-            <div class="hero-badge-icon">🛡️</div>
-            1-Year Workmanship Guarantee
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </div>
-
-  <!-- Wave transition -->
-  <div class="hero-wave">
-    <svg viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-      <path d="M0,40 C360,80 1080,0 1440,40 L1440,60 L0,60 Z" fill="#ffffff"/>
-    </svg>
+  <span class="eyebrow">Licensed & Insured · Columbus, Ohio · Since 2003</span>
+  <h1>Your Local Plumbing Experts.</h1>
+  <p class="subhead">Fast, honest, and affordable. We fix it right the first time — and we're on call around the clock for emergencies.</p>
+  <div class="hero-buttons">
+    <a href="tel:+15551234567" class="btn btn-black btn-lg">Call Now</a>
+    <a href="services.html" class="btn btn-outline btn-lg">Explore Services</a>
   </div>
 </section>
 
-<!-- ===================== STATS BAR ===================== -->
-<div class="stats-bar">
-  <div class="stats-bar-grid">
-    <div class="stat-item">
-      <span class="stat-num" data-count="1500" data-suffix="+">1500+</span>
-      <span class="stat-label">Jobs Completed</span>
-    </div>
-    <div class="stat-item">
-      <span class="stat-num" data-count="20" data-suffix="+ Yrs">20+ Yrs</span>
-      <span class="stat-label">In Business</span>
-    </div>
-    <div class="stat-item">
-      <span class="stat-num" data-count="98" data-suffix="%">98%</span>
-      <span class="stat-label">Satisfaction Rate</span>
-    </div>
-    <div class="stat-item">
-      <span class="stat-num">24/7</span>
-      <span class="stat-label">Emergency Service</span>
-    </div>
+<!-- CINEMATIC VISUAL -->
+<div class="hero-cinematic">
+  <div class="hero-cinematic-icon">🔧</div>
+  <span class="hero-cinematic-label">ClearFlow Plumbing · Central Ohio</span>
+  <div class="hero-cinematic-pills">
+    <div class="hero-pill">⚡ 60-Min Response</div>
+    <div class="hero-pill">🏅 Master Licensed</div>
+    <div class="hero-pill">⭐ 4.9 · 620 Reviews</div>
+    <div class="hero-pill">🛡 1-Year Guarantee</div>
   </div>
 </div>
 
-<!-- ===================== WHY CHOOSE US ===================== -->
+<!-- STATS -->
+<div class="stat-row container-wide">
+  <div class="stat-cell fade-in">
+    <span class="stat-num" data-count="1500" data-suffix="+">1500+</span>
+    <span class="stat-label">Jobs Completed</span>
+  </div>
+  <div class="stat-cell fade-in">
+    <span class="stat-num" data-count="20" data-suffix="+">20+</span>
+    <span class="stat-label">Years in Business</span>
+  </div>
+  <div class="stat-cell fade-in">
+    <span class="stat-num" data-count="98" data-suffix="%">98%</span>
+    <span class="stat-label">Satisfaction Rate</span>
+  </div>
+  <div class="stat-cell fade-in">
+    <span class="stat-num">24/7</span>
+    <span class="stat-label">Emergency Service</span>
+  </div>
+</div>
+
+<!-- WHY CHOOSE US -->
 <section class="section">
   <div class="container">
-    <div class="section-title-group">
-      <div class="section-eyebrow">Why ClearFlow</div>
-      <h2 class="section-title">Built on Trust. Backed by Results.</h2>
-      <p class="section-subtitle">Thousands of homeowners and businesses across Ohio rely on us every year.</p>
+    <div class="intro-group why-intro fade-in">
+      <span class="eyebrow">Why ClearFlow</span>
+      <h2 class="headline-center">Built on trust.<br>Backed by results.</h2>
     </div>
-    <div class="why-grid">
-
-      <div class="why-card fade-in">
-        <div class="why-card-top">
-          <div class="why-icon-wrap">⚡</div>
-          <span class="why-card-num">01</span>
-        </div>
-        <div class="why-card-body">
-          <h3>60-Minute Response</h3>
-          <p>We're on-site within 60 minutes for most emergency calls. Same-day appointments available for all standard services.</p>
-        </div>
+  </div>
+  <div class="feature-strip">
+    <div class="feature-grid container-wide">
+      <div class="feature-item fade-in">
+        <span class="feature-icon">⚡</span>
+        <h3>60-Minute Response</h3>
+        <p>On-site within 60 minutes for most emergency calls. Same-day appointments available for all standard services.</p>
       </div>
-
-      <div class="why-card fade-in">
-        <div class="why-card-top">
-          <div class="why-icon-wrap">🏅</div>
-          <span class="why-card-num">02</span>
-        </div>
-        <div class="why-card-body">
-          <h3>Licensed &amp; Insured</h3>
-          <p>Every ClearFlow plumber holds a state license, is fully insured, and passes a background check before joining our team.</p>
-        </div>
+      <div class="feature-item fade-in">
+        <span class="feature-icon">🏅</span>
+        <h3>Licensed & Insured</h3>
+        <p>Every plumber holds an active Ohio state license, is fully insured, and passes a background check before joining our team.</p>
       </div>
-
-      <div class="why-card fade-in">
-        <div class="why-card-top">
-          <div class="why-icon-wrap">💲</div>
-          <span class="why-card-num">03</span>
-        </div>
-        <div class="why-card-body">
-          <h3>Upfront Pricing</h3>
-          <p>You get a clear, written quote before we start. No surprise charges, no upselling — just honest work at a fair price.</p>
-        </div>
+      <div class="feature-item fade-in">
+        <span class="feature-icon">💬</span>
+        <h3>Upfront Pricing</h3>
+        <p>You get a clear written quote before we start. No surprise charges, no upselling — just honest work at a fair price.</p>
       </div>
-
-      <div class="why-card fade-in">
-        <div class="why-card-top">
-          <div class="why-icon-wrap">🛡️</div>
-          <span class="why-card-num">04</span>
-        </div>
-        <div class="why-card-body">
-          <h3>1-Year Guarantee</h3>
-          <p>Every job is backed by our workmanship guarantee. If something we fixed fails within a year, we return at no cost.</p>
-        </div>
+      <div class="feature-item fade-in">
+        <span class="feature-icon">🛡</span>
+        <h3>1-Year Guarantee</h3>
+        <p>Every job is backed by our workmanship guarantee. If something we fixed fails within a year, we return at no cost.</p>
       </div>
-
     </div>
   </div>
 </section>
 
-<!-- ===================== SERVICES ===================== -->
-<section class="section services-section">
+<!-- SERVICES -->
+<section class="section section-gray">
   <div class="container">
-    <div class="section-title-group">
-      <div class="section-eyebrow">What We Do</div>
-      <h2 class="section-title">Our Plumbing Services</h2>
-      <p class="section-subtitle">From routine maintenance to complex repairs — residential and commercial.</p>
+    <div class="services-section-label fade-in">
+      <div>
+        <span class="eyebrow">Services</span>
+        <h2>Everything plumbing.</h2>
+      </div>
+      <a href="services.html" class="btn btn-outline" style="align-self:flex-end;">View All →</a>
     </div>
-    <div class="services-grid">
-      <div class="service-card fade-in">
-        <div class="svc-icon">🚿</div>
+    <div class="services-grid fade-in">
+      <div class="service-card">
+        <span class="svc-icon">🚿</span>
         <h3>Drain Cleaning</h3>
-        <p>Clogged drains cleared fast using professional-grade hydro-jetting and snaking equipment.</p>
-        <a href="services.html" class="btn btn-primary">Learn More</a>
+        <p>Clogged drains cleared fast using hydro-jetting and snaking equipment. Safe for all pipe materials.</p>
+        <a href="services.html" class="btn btn-outline" style="font-size:0.82rem;padding:0.4rem 1rem;">Learn more</a>
       </div>
-      <div class="service-card fade-in">
-        <div class="svc-icon">🔩</div>
-        <h3>Pipe Repair &amp; Replacement</h3>
-        <p>Burst, corroded, or leaking pipes fixed right the first time with lasting materials.</p>
-        <a href="services.html" class="btn btn-primary">Learn More</a>
+      <div class="service-card">
+        <span class="svc-icon">🔩</span>
+        <h3>Pipe Repair</h3>
+        <p>Burst, corroded, or leaking pipes fixed right the first time. Trenchless options available.</p>
+        <a href="services.html" class="btn btn-outline" style="font-size:0.82rem;padding:0.4rem 1rem;">Learn more</a>
       </div>
-      <div class="service-card fade-in">
-        <div class="svc-icon">🌡️</div>
-        <h3>Water Heater Installation</h3>
-        <p>Tank and tankless water heater installs, upgrades, and same-day replacements.</p>
-        <a href="services.html" class="btn btn-primary">Learn More</a>
+      <div class="service-card">
+        <span class="svc-icon">🌡️</span>
+        <h3>Water Heaters</h3>
+        <p>Tank and tankless installs, upgrades, and same-day replacements for gas and electric units.</p>
+        <a href="services.html" class="btn btn-outline" style="font-size:0.82rem;padding:0.4rem 1rem;">Learn more</a>
       </div>
-      <div class="service-card fade-in">
-        <div class="svc-icon">🚨</div>
+      <div class="service-card">
+        <span class="svc-icon">🚨</span>
         <h3>Emergency Plumbing</h3>
-        <p>24/7 emergency response for burst pipes, flooding, and sewage backups.</p>
-        <a href="services.html" class="btn btn-primary">Learn More</a>
+        <p>True 24/7 response for burst pipes, flooding, sewage backups, and total water loss.</p>
+        <a href="services.html" class="btn btn-outline" style="font-size:0.82rem;padding:0.4rem 1rem;">Learn more</a>
       </div>
-      <div class="service-card fade-in">
-        <div class="svc-icon">🔍</div>
+      <div class="service-card">
+        <span class="svc-icon">🔍</span>
         <h3>Leak Detection</h3>
-        <p>Non-invasive technology to find hidden leaks before they cause serious damage.</p>
-        <a href="services.html" class="btn btn-primary">Learn More</a>
+        <p>Non-invasive acoustic and thermal imaging technology finds hidden leaks before they cause damage.</p>
+        <a href="services.html" class="btn btn-outline" style="font-size:0.82rem;padding:0.4rem 1rem;">Learn more</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ===================== TESTIMONIALS ===================== -->
-<section class="testimonials-section">
-  <div class="container">
-    <div class="section-title-group">
-      <div class="section-eyebrow">Customer Reviews</div>
-      <h2 class="section-title">What Our Neighbors Say</h2>
-      <p class="section-subtitle">Real reviews from real Ohio homeowners.</p>
+<!-- QUOTE / BRAND MOMENT -->
+<section class="quote-section">
+  <blockquote>"You deserve to know exactly what you're paying for — and to have it done right."</blockquote>
+  <cite>Mike Hargrove · Founder, ClearFlow Plumbing</cite>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section-dark">
+  <div class="container" style="padding-bottom:0;">
+    <div style="padding:80px 0 48px; text-align:center;">
+      <span class="eyebrow" style="color:rgba(255,255,255,0.4);">Reviews</span>
+      <h2 style="color:var(--white);">What our neighbors say.</h2>
     </div>
-    <div class="testimonials-grid">
-      <div class="testimonial-card-v2 fade-in">
-        <div class="stars">★★★★★</div>
-        <p>"ClearFlow fixed our burst pipe at 11pm on a Sunday. The tech arrived in under an hour and had everything sorted quickly. Truly lifesavers!"</p>
-        <div class="reviewer">
-          <div class="reviewer-avatar">SJ</div>
-          <div>
-            <div class="reviewer-name">Sarah J.</div>
-            <div class="reviewer-loc">Maplewood, OH</div>
-          </div>
+  </div>
+  <div class="testimonials-grid container-wide fade-in">
+    <div class="testimonial-card">
+      <div class="stars">★★★★★</div>
+      <blockquote>"ClearFlow fixed our burst pipe at 11pm on a Sunday. Arrived in under an hour and had everything sorted quickly. Truly lifesavers."</blockquote>
+      <div class="reviewer">
+        <div class="reviewer-avatar">SJ</div>
+        <div>
+          <div class="reviewer-name">Sarah J.</div>
+          <div class="reviewer-loc">Maplewood, OH</div>
         </div>
       </div>
-      <div class="testimonial-card-v2 fade-in">
-        <div class="stars">★★★★★</div>
-        <p>"Used them for a full water heater replacement. Professional crew, fair price, and they cleaned up perfectly after themselves. Highly recommend!"</p>
-        <div class="reviewer">
-          <div class="reviewer-avatar">MT</div>
-          <div>
-            <div class="reviewer-name">Marcus T.</div>
-            <div class="reviewer-loc">Riverside, OH</div>
-          </div>
+    </div>
+    <div class="testimonial-card">
+      <div class="stars">★★★★★</div>
+      <blockquote>"Full water heater replacement done same day. Professional crew, fair price, and they cleaned up perfectly after. Highly recommend."</blockquote>
+      <div class="reviewer">
+        <div class="reviewer-avatar">MT</div>
+        <div>
+          <div class="reviewer-name">Marcus T.</div>
+          <div class="reviewer-loc">Riverside, OH</div>
         </div>
       </div>
-      <div class="testimonial-card-v2 fade-in">
-        <div class="stars">★★★★★</div>
-        <p>"Their leak detection team found a slab leak nobody else could pinpoint. Saved me thousands in potential damage. Worth every penny."</p>
-        <div class="reviewer">
-          <div class="reviewer-avatar">LR</div>
-          <div>
-            <div class="reviewer-name">Linda R.</div>
-            <div class="reviewer-loc">Cedar Hills, OH</div>
-          </div>
+    </div>
+    <div class="testimonial-card">
+      <div class="stars">★★★★★</div>
+      <blockquote>"Their leak detection team found a slab leak nobody else could pinpoint. Saved me thousands in potential damage. Worth every penny."</blockquote>
+      <div class="reviewer">
+        <div class="reviewer-avatar">LR</div>
+        <div>
+          <div class="reviewer-name">Linda R.</div>
+          <div class="reviewer-loc">Cedar Hills, OH</div>
         </div>
       </div>
     </div>
   </div>
+  <div style="padding:48px 0 80px; text-align:center;">
+    <span style="font-size:0.82rem;color:rgba(255,255,255,0.3);letter-spacing:0.06em;">4.9 average · 620+ verified reviews</span>
+  </div>
 </section>
 
-<!-- ===================== CTA ===================== -->
-<section class="cta-banner-v2">
-  <div class="container">
-    <div class="cta-inner-box">
-      <h2>Ready to Fix Your Plumbing Problem?</h2>
-      <p>Get a free estimate today. No obligation, no pressure — just expert advice from people who care.</p>
-      <div class="cta-buttons">
-        <a href="tel:+15551234567" class="btn btn-call btn-lg">📞 (555) 123-4567</a>
-        <a href="contact.html" class="btn btn-hero-ghost btn-lg">Get a Free Quote →</a>
-      </div>
+<!-- CTA -->
+<section class="cta-section">
+  <div class="container-narrow fade-in">
+    <span class="eyebrow">Get Started</span>
+    <h2>Ready to fix your plumbing problem?</h2>
+    <p class="subhead subhead-center">Get a free estimate. No obligation, no pressure — just expert advice from people who care.</p>
+    <div class="cta-section-buttons" style="margin-top:2.5rem;">
+      <a href="tel:+15551234567" class="btn btn-black btn-lg">Call (555) 123-4567</a>
+      <a href="contact.html" class="btn btn-outline btn-lg">Get a Free Quote</a>
     </div>
   </div>
 </section>
 
-<!-- Footer -->
+<!-- FOOTER -->
 <footer>
   <div class="footer-grid">
     <div class="footer-brand">
@@ -359,11 +350,11 @@
       <p>Serving the greater Ohio area since 2003. Licensed, insured, and committed to doing the job right the first time.</p>
     </div>
     <div>
-      <h4>Quick Links</h4>
+      <h4>Company</h4>
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="services.html">Services</a></li>
-        <li><a href="about.html">About Us</a></li>
+        <li><a href="about.html">About</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </div>
@@ -373,25 +364,24 @@
         <li><a href="services.html">Drain Cleaning</a></li>
         <li><a href="services.html">Pipe Repair</a></li>
         <li><a href="services.html">Water Heaters</a></li>
-        <li><a href="services.html">Emergency Plumbing</a></li>
+        <li><a href="services.html">Emergency</a></li>
         <li><a href="services.html">Leak Detection</a></li>
       </ul>
     </div>
     <div>
-      <h4>Contact Us</h4>
+      <h4>Contact</h4>
       <div class="footer-contact-item"><span class="fc-icon">📞</span> (555) 123-4567</div>
       <div class="footer-contact-item"><span class="fc-icon">✉️</span> info@clearflowplumbing.com</div>
-      <div class="footer-contact-item"><span class="fc-icon">📍</span> 412 Waterway Blvd,<br>Columbus, OH 43215</div>
-      <div class="footer-contact-item"><span class="fc-icon">🕐</span> Mon–Fri: 7am–8pm<br>Sat–Sun: 8am–6pm</div>
+      <div class="footer-contact-item"><span class="fc-icon">📍</span> 412 Waterway Blvd, Columbus OH</div>
+      <div class="footer-contact-item"><span class="fc-icon">🕐</span> Mon–Fri 7am–8pm · Sat–Sun 8am–6pm</div>
     </div>
   </div>
   <div class="footer-bottom">
-    <span>&copy; 2026 ClearFlow Plumbing. All rights reserved.</span>
-    <span>Designed with ❤️ for our community</span>
+    <span>© 2026 ClearFlow Plumbing. All rights reserved.</span>
+    <span>Columbus, Ohio</span>
   </div>
 </footer>
 
 <script src="js/main.js"></script>
 </body>
 </html>
- 

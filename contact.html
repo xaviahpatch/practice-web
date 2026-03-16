@@ -3,135 +3,45 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact Us – ClearFlow Plumbing</title>
-  <meta name="description" content="Contact ClearFlow Plumbing for a free estimate or emergency service. Call (555) 123-4567 or use our online form." />
+  <title>Contact – ClearFlow Plumbing</title>
+  <meta name="description" content="Get a free estimate or reach our 24/7 emergency line. Call (555) 123-4567 or send us a message." />
   <link rel="stylesheet" href="css/style.css" />
-  <style>
-    .fade-in { opacity: 0; transform: translateY(24px); transition: opacity 0.55s ease, transform 0.55s ease; }
-    .fade-in.visible { opacity: 1; transform: none; }
-
-    .map-placeholder {
-      background: linear-gradient(135deg, #e8e8e8 0%, #d0d0d0 100%);
-      border-radius: var(--radius);
-      height: 280px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 0.75rem;
-      color: var(--gray);
-      border: 2px dashed #bbb;
-      margin-top: 2rem;
-      font-size: 0.95rem;
-      text-align: center;
-      padding: 1.5rem;
-    }
-    .map-placeholder .map-icon { font-size: 3rem; }
-
-    .hours-table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 1rem;
-    }
-    .hours-table tr { border-bottom: 1px solid var(--gray-light); }
-    .hours-table tr:last-child { border-bottom: none; }
-    .hours-table td {
-      padding: 0.55rem 0;
-      font-size: 0.92rem;
-      color: var(--gray-dark);
-    }
-    .hours-table td:last-child {
-      text-align: right;
-      font-weight: 600;
-    }
-    .hours-open { color: #2e7d32; }
-    .hours-emergency { color: var(--red); font-weight: 700; }
-
-    .faq-list { display: flex; flex-direction: column; gap: 1rem; }
-    .faq-item {
-      border: 1.5px solid #e0e0e0;
-      border-radius: var(--radius);
-      overflow: hidden;
-    }
-    .faq-question {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 1.25rem;
-      background: var(--white);
-      cursor: pointer;
-      font-weight: 600;
-      font-size: 0.95rem;
-      gap: 1rem;
-      transition: background var(--transition);
-      border: none;
-      width: 100%;
-      text-align: left;
-      color: var(--gray-dark);
-    }
-    .faq-question:hover { background: var(--gray-light); }
-    .faq-question.open { background: var(--red); color: var(--white); }
-    .faq-arrow {
-      flex-shrink: 0;
-      font-size: 0.8rem;
-      transition: transform var(--transition);
-    }
-    .faq-question.open .faq-arrow { transform: rotate(180deg); }
-    .faq-answer {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.35s ease, padding 0.25s ease;
-      padding: 0 1.25rem;
-      font-size: 0.92rem;
-      color: var(--gray);
-      background: var(--off-white);
-    }
-    .faq-answer.open {
-      max-height: 200px;
-      padding: 1rem 1.25rem;
-    }
-  </style>
 </head>
 <body>
 
 <div class="emergency-strip">
-  🚨 24/7 Emergency Plumbing Available — Call <a href="tel:+15551234567">(555) 123-4567</a>
+  24/7 Emergency Service — <a href="tel:+15551234567">(555) 123-4567</a>
 </div>
 
 <nav class="navbar">
-  <a href="index.html" class="nav-brand">
-    <span class="brand-icon">🔧</span>
-    ClearFlow Plumbing
-  </a>
-  <button class="hamburger" aria-label="Toggle menu">
-    <span></span><span></span><span></span>
-  </button>
+  <a href="index.html" class="nav-brand"><span class="brand-icon">🔧</span> ClearFlow Plumbing</a>
+  <button class="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
   <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
     <li><a href="services.html">Services</a></li>
-    <li><a href="about.html">About Us</a></li>
+    <li><a href="about.html">About</a></li>
     <li><a href="contact.html">Contact</a></li>
-    <li><a href="tel:+15551234567" class="btn btn-primary">📞 Call Now</a></li>
+    <li><a href="tel:+15551234567" class="nav-cta">Call Now</a></li>
   </ul>
 </nav>
 
-<!-- Page Hero -->
+<!-- PAGE HERO -->
 <section class="page-hero">
-  <div class="container">
-    <h1>Contact Us</h1>
-    <p>Get a free estimate, book a service, or reach our emergency line anytime.</p>
-  </div>
+  <span class="eyebrow">Get in Touch</span>
+  <h1>Let's talk.</h1>
+  <p class="subhead subhead-center">Call us for the fastest response, or fill out the form and we'll get back to you within a few hours.</p>
 </section>
 
-<!-- Contact Section -->
+<!-- CONTACT SECTION -->
 <section class="section">
   <div class="container">
-    <div class="contact-grid">
+    <div class="contact-grid fade-in">
 
-      <!-- Contact Info -->
-      <div class="contact-info fade-in">
-        <h2>Get in Touch</h2>
-        <p>Whether it's a dripping faucet or a burst pipe, we're here to help. Call us for the fastest response, or fill out the form and we'll get back to you within a few hours.</p>
+      <!-- Info -->
+      <div class="contact-info">
+        <span class="eyebrow">Contact Information</span>
+        <h2 style="font-size:clamp(1.6rem,3.5vw,2.4rem);margin-bottom:1rem;">We're here<br>when you need us.</h2>
+        <p>Whether it's a dripping faucet or a burst pipe, we're ready to help. For emergencies, always call — we're faster on the phone.</p>
 
         <div class="contact-details">
           <div class="contact-item">
@@ -158,14 +68,13 @@
           <div class="contact-item">
             <div class="ci-icon">🚨</div>
             <div class="ci-text">
-              <strong>Emergency Line</strong>
-              <span><a href="tel:+15551234567">(555) 123-4567</a> — Available 24/7</span>
+              <strong>Emergency</strong>
+              <span><a href="tel:+15551234567">(555) 123-4567</a> · Available 24/7</span>
             </div>
           </div>
         </div>
 
-        <!-- Hours -->
-        <h3 style="margin-bottom:0.5rem;">Business Hours</h3>
+        <h3 style="font-size:0.88rem;font-weight:600;margin-bottom:0.5rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--gray);">Hours</h3>
         <table class="hours-table">
           <tr><td>Monday – Friday</td><td class="hours-open">7:00 AM – 8:00 PM</td></tr>
           <tr><td>Saturday</td><td class="hours-open">8:00 AM – 6:00 PM</td></tr>
@@ -175,18 +84,19 @@
 
         <div class="map-placeholder">
           <div class="map-icon">🗺️</div>
-          <strong>412 Waterway Blvd, Columbus, OH 43215</strong>
+          <strong style="font-size:0.9rem;">412 Waterway Blvd, Columbus, OH 43215</strong>
           <span>Serving all of Central Ohio</span>
         </div>
       </div>
 
-      <!-- Contact Form -->
+      <!-- Form -->
       <div class="contact-form-wrapper fade-in">
-        <h3>Send Us a Message</h3>
+        <h3>Send a Message</h3>
         <form id="contactForm">
-          <input type="hidden" name="access_key" value="90934852-c27d-40f9-870d-f1b35a2bef4e" />
-          <input type="hidden" name="subject" value="New Contact Form Submission – ClearFlow Plumbing" />
-          <input type="hidden" name="from_name" value="ClearFlow Plumbing Website" />
+          <input type="hidden" name="access_key"  value="90934852-c27d-40f9-870d-f1b35a2bef4e" />
+          <input type="hidden" name="subject"     value="New Contact Form Submission – ClearFlow Plumbing" />
+          <input type="hidden" name="from_name"   value="ClearFlow Plumbing Website" />
+
           <div class="form-row">
             <div class="form-group">
               <label for="firstName">First Name *</label>
@@ -194,7 +104,7 @@
             </div>
             <div class="form-group">
               <label for="lastName">Last Name *</label>
-              <input type="text" id="lastName" name="lastName" placeholder="Smith" required />
+              <input type="text" id="lastName"  name="lastName"  placeholder="Smith" required />
             </div>
           </div>
 
@@ -227,22 +137,22 @@
           </div>
 
           <div class="form-group" style="flex-direction:row;align-items:center;gap:0.6rem;">
-            <input type="checkbox" id="emergency-check" name="emergency" style="width:18px;height:18px;accent-color:var(--red);flex-shrink:0;" />
-            <label for="emergency-check" style="font-weight:400;font-size:0.9rem;cursor:pointer;">
+            <input type="checkbox" id="emergency-check" name="emergency" style="width:16px;height:16px;accent-color:var(--black);flex-shrink:0;" />
+            <label for="emergency-check" style="font-weight:400;font-size:0.85rem;cursor:pointer;color:var(--gray);">
               This is an emergency — please call me as soon as possible.
             </label>
           </div>
 
-          <button type="submit" id="submitBtn" class="btn btn-primary btn-lg" style="width:100%;">Send Message →</button>
+          <button type="submit" id="submitBtn" class="btn btn-black btn-lg" style="width:100%;justify-content:center;">Send Message</button>
 
-          <div id="formSuccess" style="display:none;background:#e8f5e9;border:1.5px solid #4caf50;border-radius:var(--radius);padding:1.25rem 1.5rem;margin-top:1.25rem;color:#1b5e20;">
-            <div style="font-size:1.5rem;margin-bottom:0.5rem;">✅</div>
-            <strong style="display:block;font-size:1rem;margin-bottom:0.25rem;">Message sent successfully!</strong>
-            <span style="font-size:0.92rem;">Thank you! We received your message and will be in touch within a few hours. For urgent issues, call <a href="tel:+15551234567" style="color:#1b5e20;font-weight:700;">(555) 123-4567</a>.</span>
+          <div id="formSuccess" style="display:none;background:#f0faf3;border:1px solid rgba(26,127,55,0.3);border-radius:10px;padding:1.25rem 1.5rem;margin-top:1.25rem;color:#1a7f37;">
+            <div style="font-size:1.3rem;margin-bottom:0.4rem;">✓</div>
+            <strong style="display:block;font-size:0.95rem;margin-bottom:0.2rem;">Message sent.</strong>
+            <span style="font-size:0.88rem;color:#2d7a3a;">We'll be in touch within a few hours. For urgent issues, call <a href="tel:+15551234567" style="color:#1a7f37;font-weight:600;">(555) 123-4567</a>.</span>
           </div>
 
-          <div id="formError" style="display:none;background:#fdecea;border:1.5px solid #ef5350;border-radius:var(--radius);padding:1rem 1.25rem;margin-top:1.25rem;color:#b71c1c;font-size:0.92rem;">
-            ⚠️ Something went wrong. Please try again or call us directly at (555) 123-4567.
+          <div id="formError" style="display:none;background:#fef2f2;border:1px solid rgba(201,34,34,0.25);border-radius:10px;padding:1rem 1.25rem;margin-top:1.25rem;color:var(--red);font-size:0.88rem;">
+            ⚠️ Something went wrong. Please try again or call us at (555) 123-4567.
           </div>
         </form>
       </div>
@@ -252,81 +162,70 @@
 </section>
 
 <!-- FAQ -->
-<section class="section section-alt">
-  <div class="container" style="max-width:760px;">
-    <h2 class="section-title">Frequently Asked Questions</h2>
-    <p class="section-subtitle">Quick answers to the questions we hear most often.</p>
-    <div class="faq-list">
+<section class="section section-gray">
+  <div class="container" style="max-width:700px;">
+    <div style="text-align:center;margin-bottom:3.5rem;" class="fade-in">
+      <span class="eyebrow">FAQ</span>
+      <h2>Common questions.</h2>
+    </div>
+    <div class="faq-list fade-in">
       <div class="faq-item">
         <button class="faq-question" onclick="toggleFaq(this)">
           Do you offer free estimates?
           <span class="faq-arrow">▼</span>
         </button>
-        <div class="faq-answer">
-          Yes! We provide free, no-obligation estimates for all non-emergency plumbing work. A licensed plumber will assess the problem and give you a clear written quote before any work begins.
-        </div>
+        <div class="faq-answer">Yes. We provide free, no-obligation estimates for all non-emergency work. A licensed plumber assesses the problem and gives you a clear written quote before anything starts.</div>
       </div>
       <div class="faq-item">
         <button class="faq-question" onclick="toggleFaq(this)">
           How quickly can you respond to an emergency?
           <span class="faq-arrow">▼</span>
         </button>
-        <div class="faq-answer">
-          Our emergency response team is on call 24/7. For most service areas in central Ohio, we aim to be on-site within 60 minutes. Call (555) 123-4567 for the fastest response.
-        </div>
+        <div class="faq-answer">Our emergency team is on call 24/7. For most areas in central Ohio, we aim to be on-site within 60 minutes. Call (555) 123-4567 for the fastest response.</div>
       </div>
       <div class="faq-item">
         <button class="faq-question" onclick="toggleFaq(this)">
           Are your plumbers licensed and insured?
           <span class="faq-arrow">▼</span>
         </button>
-        <div class="faq-answer">
-          Absolutely. Every ClearFlow plumber holds an active Ohio state plumbing license and is fully insured with liability coverage. We also conduct background checks on all employees.
-        </div>
+        <div class="faq-answer">Yes. Every ClearFlow plumber holds an active Ohio state plumbing license, is fully insured with liability coverage, and passes a background check before joining our team.</div>
       </div>
       <div class="faq-item">
         <button class="faq-question" onclick="toggleFaq(this)">
           What areas do you serve?
           <span class="faq-arrow">▼</span>
         </button>
-        <div class="faq-answer">
-          We serve all of central Ohio, including Columbus, Westerville, Dublin, Gahanna, Grove City, Hilliard, New Albany, Powell, and surrounding communities. Call us to confirm service in your area.
-        </div>
+        <div class="faq-answer">We serve all of central Ohio — Columbus, Westerville, Dublin, Gahanna, Grove City, Hilliard, New Albany, Powell, and surrounding areas. Call to confirm service in your area.</div>
       </div>
       <div class="faq-item">
         <button class="faq-question" onclick="toggleFaq(this)">
           Do you guarantee your work?
           <span class="faq-arrow">▼</span>
         </button>
-        <div class="faq-answer">
-          Yes. All ClearFlow plumbing work is backed by a 1-year workmanship guarantee. If something we repaired fails within a year due to our workmanship, we'll come back and fix it at no charge.
-        </div>
+        <div class="faq-answer">Yes. All work is backed by a 1-year workmanship guarantee. If something we repaired fails within a year due to our workmanship, we return and fix it at no charge.</div>
       </div>
       <div class="faq-item">
         <button class="faq-question" onclick="toggleFaq(this)">
           Do you work on weekends?
           <span class="faq-arrow">▼</span>
         </button>
-        <div class="faq-answer">
-          Yes. We're open Saturday 8am–6pm and Sunday 8am–4pm for regular appointments. Emergency service is available around the clock, every day of the year.
-        </div>
+        <div class="faq-answer">Yes. We're open Saturday 8am–6pm and Sunday 8am–4pm for regular appointments. Emergency service is available around the clock, every day of the year.</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- CTA Banner -->
-<section class="cta-banner">
-  <div class="container">
-    <h2>Don't Let a Plumbing Problem Wait</h2>
-    <p>Small leaks become big damage. Call us today and get it resolved.</p>
-    <div class="cta-buttons">
-      <a href="tel:+15551234567" class="btn btn-outline btn-lg">📞 Call (555) 123-4567</a>
-    </div>
+<!-- CTA -->
+<section class="section" style="text-align:center;">
+  <div class="container-narrow fade-in">
+    <span class="eyebrow">Don't Wait</span>
+    <h2>Small leaks become big damage.</h2>
+    <p class="subhead subhead-center" style="margin-top:0.75rem;margin-bottom:2.5rem;">Call us today and get it resolved.</p>
+    <a href="tel:+15551234567" class="btn btn-black btn-lg">Call (555) 123-4567</a>
   </div>
 </section>
 
-<!-- Footer -->
+<!-- FOOTER -->
 <footer>
   <div class="footer-grid">
     <div class="footer-brand">
@@ -334,11 +233,11 @@
       <p>Serving the greater Ohio area since 2003. Licensed, insured, and committed to doing the job right the first time.</p>
     </div>
     <div>
-      <h4>Quick Links</h4>
+      <h4>Company</h4>
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="services.html">Services</a></li>
-        <li><a href="about.html">About Us</a></li>
+        <li><a href="about.html">About</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </div>
@@ -348,21 +247,21 @@
         <li><a href="services.html">Drain Cleaning</a></li>
         <li><a href="services.html">Pipe Repair</a></li>
         <li><a href="services.html">Water Heaters</a></li>
-        <li><a href="services.html">Emergency Plumbing</a></li>
+        <li><a href="services.html">Emergency</a></li>
         <li><a href="services.html">Leak Detection</a></li>
       </ul>
     </div>
     <div>
-      <h4>Contact Us</h4>
+      <h4>Contact</h4>
       <div class="footer-contact-item"><span class="fc-icon">📞</span> (555) 123-4567</div>
       <div class="footer-contact-item"><span class="fc-icon">✉️</span> info@clearflowplumbing.com</div>
-      <div class="footer-contact-item"><span class="fc-icon">📍</span> 412 Waterway Blvd,<br>Columbus, OH 43215</div>
-      <div class="footer-contact-item"><span class="fc-icon">🕐</span> Mon–Fri: 7am–8pm<br>Sat–Sun: 8am–6pm</div>
+      <div class="footer-contact-item"><span class="fc-icon">📍</span> 412 Waterway Blvd, Columbus OH</div>
+      <div class="footer-contact-item"><span class="fc-icon">🕐</span> Mon–Fri 7am–8pm · Sat–Sun 8am–6pm</div>
     </div>
   </div>
   <div class="footer-bottom">
-    <span>&copy; 2026 ClearFlow Plumbing. All rights reserved.</span>
-    <span>Designed with ❤️ for our community</span>
+    <span>© 2026 ClearFlow Plumbing. All rights reserved.</span>
+    <span>Columbus, Ohio</span>
   </div>
 </footer>
 
@@ -377,7 +276,6 @@
   contactForm.addEventListener('submit', async (e) => {
     e.preventDefault();
 
-    // Combine first + last name into a single "name" field for Web3Forms
     const firstName = contactForm.querySelector('[name="firstName"]').value.trim();
     const lastName  = contactForm.querySelector('[name="lastName"]').value.trim();
 
@@ -409,7 +307,7 @@
     }
 
     submitBtn.disabled    = false;
-    submitBtn.textContent = 'Send Message →';
+    submitBtn.textContent = 'Send Message';
   });
 
   // ===== FAQ ACCORDION =====

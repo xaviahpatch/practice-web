@@ -4,301 +4,289 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Services – ClearFlow Plumbing</title>
-  <meta name="description" content="Explore ClearFlow Plumbing's full range of services: drain cleaning, pipe repair, water heater installation, emergency plumbing, and leak detection." />
+  <meta name="description" content="Drain cleaning, pipe repair, water heaters, emergency plumbing, and leak detection — all backed by a 1-year guarantee." />
   <link rel="stylesheet" href="css/style.css" />
   <style>
-    .fade-in { opacity: 0; transform: translateY(24px); transition: opacity 0.55s ease, transform 0.55s ease; }
-    .fade-in.visible { opacity: 1; transform: none; }
-
-    .service-detail {
-      background: var(--white);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      overflow: hidden;
+    /* Service detail rows — alternating split layout */
+    .svc-row {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      margin-bottom: 2.5rem;
+      min-height: 420px;
+      border-bottom: 1px solid var(--gray-border);
     }
-    .service-detail:nth-child(even) { direction: rtl; }
-    .service-detail:nth-child(even) > * { direction: ltr; }
+    .svc-row:last-child { border-bottom: none; }
+    .svc-row:nth-child(even) .svc-visual { order: -1; }
 
-    .service-detail-image {
-      background: linear-gradient(135deg, var(--red-dark), var(--red));
+    .svc-visual {
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      padding: 3rem;
-      min-height: 280px;
-      color: var(--white);
+      gap: 1.25rem;
+      padding: 4rem 3rem;
+      background: var(--gray-bg);
       text-align: center;
-      gap: 1rem;
     }
-    .service-detail-image .big-icon { font-size: 5rem; }
-    .service-detail-image h3 { font-size: 1.5rem; color: var(--white); }
-    .service-detail-image .price-badge {
-      background: rgba(255,255,255,0.2);
-      border: 1px solid rgba(255,255,255,0.4);
-      padding: 0.3rem 1rem;
-      border-radius: 50px;
-      font-size: 0.85rem;
-      font-weight: 600;
-    }
+    .svc-row:nth-child(even) .svc-visual { background: var(--black); }
 
-    .service-detail-content {
-      padding: 2.5rem;
-    }
-    .service-detail-content p { color: var(--gray); margin-bottom: 1.25rem; }
-    .service-detail-content ul {
-      list-style: none;
-      padding: 0;
-      margin-bottom: 1.5rem;
-    }
-    .service-detail-content ul li {
-      display: flex;
-      align-items: flex-start;
-      gap: 0.6rem;
-      padding: 0.4rem 0;
+    .svc-visual-icon { font-size: 5rem; filter: drop-shadow(0 8px 24px rgba(0,0,0,0.25)); }
+    .svc-visual-tag  { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gray); }
+    .svc-row:nth-child(even) .svc-visual-tag { color: rgba(255,255,255,0.4); }
+    .svc-visual-badge {
+      background: rgba(0,0,0,0.07);
+      border-radius: var(--radius-pill);
+      padding: 0.4rem 1rem;
+      font-size: 0.8rem;
+      font-weight: 500;
       color: var(--gray-dark);
-      font-size: 0.95rem;
-      border-bottom: 1px solid var(--gray-light);
     }
-    .service-detail-content ul li:last-child { border-bottom: none; }
-    .service-detail-content ul li::before {
-      content: '✓';
-      color: var(--red);
-      font-weight: 700;
-      flex-shrink: 0;
-      margin-top: 1px;
-    }
+    .svc-row:nth-child(even) .svc-visual-badge { background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.7); }
 
-    .process-grid {
+    .svc-content {
+      padding: 4rem 3.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .svc-content .eyebrow { margin-bottom: 0.75rem; }
+    .svc-content h2 { font-size: clamp(1.6rem, 3vw, 2.4rem); margin-bottom: 1rem; }
+    .svc-content > p { color: var(--gray); font-size: 1rem; line-height: 1.75; margin-bottom: 1.5rem; }
+    .svc-list { list-style: none; margin-bottom: 2rem; }
+    .svc-list li {
+      display: flex; align-items: flex-start; gap: 0.6rem;
+      padding: 0.5rem 0;
+      font-size: 0.9rem; color: var(--gray);
+      border-bottom: 1px solid var(--gray-border);
+    }
+    .svc-list li:last-child { border-bottom: none; }
+    .svc-list li::before { content: '↗'; font-weight: 700; color: var(--black); flex-shrink: 0; margin-top: 1px; font-size: 0.8rem; }
+
+    /* Process steps */
+    .process-row {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1.5rem;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      border-top: 1px solid var(--gray-border);
+      border-bottom: 1px solid var(--gray-border);
     }
     .process-step {
+      padding: 3rem 2rem;
+      border-right: 1px solid var(--gray-border);
       text-align: center;
-      padding: 1.5rem;
     }
-    .step-number {
-      width: 52px;
-      height: 52px;
-      border-radius: 50%;
-      background: var(--red);
-      color: var(--white);
-      font-size: 1.3rem;
+    .process-step:last-child { border-right: none; }
+    .step-num {
+      display: block;
+      font-size: 3rem;
       font-weight: 800;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 1rem;
+      color: rgba(0,0,0,0.07);
+      letter-spacing: -0.05em;
+      line-height: 1;
+      margin-bottom: 1rem;
     }
-    .process-step h3 { margin-bottom: 0.5rem; }
-    .process-step p { color: var(--gray); font-size: 0.9rem; }
+    .process-step h3 { margin-bottom: 0.5rem; font-size: 1rem; }
+    .process-step p  { color: var(--gray); font-size: 0.85rem; line-height: 1.65; }
 
-    @media (max-width: 700px) {
-      .service-detail { grid-template-columns: 1fr; }
-      .service-detail:nth-child(even) { direction: ltr; }
+    @media (max-width: 860px) {
+      .svc-row { grid-template-columns: 1fr; }
+      .svc-row:nth-child(even) .svc-visual { order: 0; }
+      .svc-visual { min-height: 240px; padding: 3rem 2rem; }
+      .svc-content { padding: 2.5rem 2rem; }
+      .process-row { grid-template-columns: repeat(2, 1fr); }
+      .process-step:nth-child(2) { border-right: none; }
+    }
+    @media (max-width: 540px) {
+      .process-row { grid-template-columns: 1fr; }
+      .process-step { border-right: none; }
     }
   </style>
 </head>
 <body>
 
 <div class="emergency-strip">
-  🚨 24/7 Emergency Plumbing Available — Call <a href="tel:+15551234567">(555) 123-4567</a>
+  24/7 Emergency Service — <a href="tel:+15551234567">(555) 123-4567</a>
 </div>
 
 <nav class="navbar">
-  <a href="index.html" class="nav-brand">
-    <span class="brand-icon">🔧</span>
-    ClearFlow Plumbing
-  </a>
-  <button class="hamburger" aria-label="Toggle menu">
-    <span></span><span></span><span></span>
-  </button>
+  <a href="index.html" class="nav-brand"><span class="brand-icon">🔧</span> ClearFlow Plumbing</a>
+  <button class="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
   <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
     <li><a href="services.html">Services</a></li>
-    <li><a href="about.html">About Us</a></li>
+    <li><a href="about.html">About</a></li>
     <li><a href="contact.html">Contact</a></li>
-    <li><a href="tel:+15551234567" class="btn btn-primary">📞 Call Now</a></li>
+    <li><a href="tel:+15551234567" class="nav-cta">Call Now</a></li>
   </ul>
 </nav>
 
-<!-- Page Hero -->
+<!-- PAGE HERO -->
 <section class="page-hero">
-  <div class="container">
-    <h1>Our Plumbing Services</h1>
-    <p>Professional solutions for every plumbing need — residential and commercial.</p>
-  </div>
+  <span class="eyebrow">What We Do</span>
+  <h1>Our Services.</h1>
+  <p class="subhead subhead-center">Professional plumbing solutions for every home and business — all backed by a 1-year workmanship guarantee.</p>
 </section>
 
-<!-- Services Detail -->
+<!-- SERVICE ROWS -->
+<div class="fade-in">
+
+  <!-- Drain Cleaning -->
+  <div class="svc-row">
+    <div class="svc-visual">
+      <div class="svc-visual-icon">🚿</div>
+      <span class="svc-visual-tag">Drain Cleaning</span>
+      <span class="svc-visual-badge">Starting at $89</span>
+    </div>
+    <div class="svc-content">
+      <span class="eyebrow">Service 01</span>
+      <h2>Drain Cleaning</h2>
+      <p>Slow or completely blocked drains cleared using professional-grade hydro-jetting and snaking equipment. Safe for all pipe materials, fast turnaround.</p>
+      <ul class="svc-list">
+        <li>Hydro-jetting for deep, thorough cleaning</li>
+        <li>Kitchen sink & grease clogs</li>
+        <li>Bathroom sink, tub & shower drains</li>
+        <li>Toilet & sewer line clearing</li>
+        <li>Video camera inspection available</li>
+      </ul>
+      <a href="contact.html" class="btn btn-black" style="align-self:flex-start;">Book This Service</a>
+    </div>
+  </div>
+
+  <!-- Pipe Repair -->
+  <div class="svc-row">
+    <div class="svc-visual">
+      <div class="svc-visual-icon">🔩</div>
+      <span class="svc-visual-tag">Pipe Repair</span>
+      <span class="svc-visual-badge">Free Estimate</span>
+    </div>
+    <div class="svc-content">
+      <span class="eyebrow">Service 02</span>
+      <h2>Pipe Repair & Replacement</h2>
+      <p>Leaking, burst, or corroded pipes diagnosed and repaired with minimal disruption. We work with copper, PVC, PEX, galvanized steel, and cast iron.</p>
+      <ul class="svc-list">
+        <li>Burst & broken pipe repair</li>
+        <li>Corroded pipe replacement</li>
+        <li>Full re-piping services</li>
+        <li>Trenchless pipe lining — no digging</li>
+        <li>Frozen pipe thawing & prevention</li>
+      </ul>
+      <a href="contact.html" class="btn btn-black" style="align-self:flex-start;">Get a Free Estimate</a>
+    </div>
+  </div>
+
+  <!-- Water Heater -->
+  <div class="svc-row">
+    <div class="svc-visual">
+      <div class="svc-visual-icon">🌡️</div>
+      <span class="svc-visual-tag">Water Heaters</span>
+      <span class="svc-visual-badge">Same-Day Available</span>
+    </div>
+    <div class="svc-content">
+      <span class="eyebrow">Service 03</span>
+      <h2>Water Heater Installation</h2>
+      <p>Tank and tankless water heater installs, replacements, and repairs. We carry major brands in stock for same-day replacement on most standard units.</p>
+      <ul class="svc-list">
+        <li>Tank water heater installation (all sizes)</li>
+        <li>Tankless / on-demand water heater install</li>
+        <li>Gas & electric water heater service</li>
+        <li>Annual maintenance & flushing</li>
+        <li>Energy-efficient upgrade consultation</li>
+      </ul>
+      <a href="contact.html" class="btn btn-black" style="align-self:flex-start;">Schedule Installation</a>
+    </div>
+  </div>
+
+  <!-- Emergency -->
+  <div class="svc-row">
+    <div class="svc-visual">
+      <div class="svc-visual-icon">🚨</div>
+      <span class="svc-visual-tag">Emergency</span>
+      <span class="svc-visual-badge">Available 24/7</span>
+    </div>
+    <div class="svc-content">
+      <span class="eyebrow">Service 04</span>
+      <h2>Emergency Plumbing</h2>
+      <p>True 24/7 emergency response — nights, weekends, and holidays. Our team arrives within 60 minutes for most service areas, fully stocked to resolve issues in one visit.</p>
+      <ul class="svc-list">
+        <li>Burst & flooding pipe response</li>
+        <li>Sewage backup & overflow</li>
+        <li>Complete loss of water pressure</li>
+        <li>Gas line emergencies</li>
+        <li>Water heater failure</li>
+      </ul>
+      <a href="tel:+15551234567" class="btn btn-red" style="align-self:flex-start;">Call Now — We're Ready</a>
+    </div>
+  </div>
+
+  <!-- Leak Detection -->
+  <div class="svc-row">
+    <div class="svc-visual">
+      <div class="svc-visual-icon">🔍</div>
+      <span class="svc-visual-tag">Leak Detection</span>
+      <span class="svc-visual-badge">Non-Invasive</span>
+    </div>
+    <div class="svc-content">
+      <span class="eyebrow">Service 05</span>
+      <h2>Leak Detection</h2>
+      <p>Advanced acoustic, electronic, and thermal imaging technology pinpoints leaks behind walls, under slabs, and underground — without tearing anything out.</p>
+      <ul class="svc-list">
+        <li>Acoustic & electronic leak detection</li>
+        <li>Thermal imaging camera inspection</li>
+        <li>Slab leak detection & repair</li>
+        <li>Pool & irrigation system leaks</li>
+        <li>Post-repair verification testing</li>
+      </ul>
+      <a href="contact.html" class="btn btn-black" style="align-self:flex-start;">Schedule Detection</a>
+    </div>
+  </div>
+
+</div>
+
+<!-- HOW IT WORKS -->
 <section class="section">
   <div class="container">
-
-    <!-- Drain Cleaning -->
-    <div class="service-detail fade-in">
-      <div class="service-detail-image">
-        <div class="big-icon">🚿</div>
-        <h3>Drain Cleaning</h3>
-        <div class="price-badge">Starting at $89</div>
-      </div>
-      <div class="service-detail-content">
-        <p>Slow or completely blocked drains? Our professional drain cleaning service uses industry-leading hydro-jetting and snake equipment to clear any clog — fast and completely.</p>
-        <p>We clear drains in kitchens, bathrooms, laundry rooms, and commercial properties. Our process is safe for all pipe materials and won't damage your plumbing.</p>
-        <ul>
-          <li>Hydro-jetting for deep, thorough cleaning</li>
-          <li>Drain snake for standard blockages</li>
-          <li>Kitchen sink &amp; grease clogs</li>
-          <li>Bathroom sink, tub &amp; shower drains</li>
-          <li>Toilet &amp; sewer line clearing</li>
-          <li>Floor drain maintenance</li>
-          <li>Video camera inspection available</li>
-        </ul>
-        <a href="contact.html" class="btn btn-primary">Book This Service</a>
-      </div>
+    <div class="intro-group fade-in" style="text-align:center;margin-bottom:4rem;">
+      <span class="eyebrow">How It Works</span>
+      <h2>Simple from start to finish.</h2>
     </div>
-
-    <!-- Pipe Repair -->
-    <div class="service-detail fade-in">
-      <div class="service-detail-image">
-        <div class="big-icon">🔩</div>
-        <h3>Pipe Repair &amp; Replacement</h3>
-        <div class="price-badge">Free Estimate</div>
-      </div>
-      <div class="service-detail-content">
-        <p>Leaking, burst, or corroded pipes can cause serious damage if not addressed quickly. Our licensed plumbers diagnose and repair all types of pipe issues with minimal disruption to your home or business.</p>
-        <p>We work with copper, PVC, PEX, galvanized steel, and cast iron pipes. Trenchless options available for sewer line repair.</p>
-        <ul>
-          <li>Burst &amp; broken pipe repair</li>
-          <li>Pinhole leak patching</li>
-          <li>Corroded pipe replacement</li>
-          <li>Full re-piping services</li>
-          <li>Sewer line repair &amp; replacement</li>
-          <li>Trenchless pipe lining (no digging)</li>
-          <li>Frozen pipe thawing &amp; prevention</li>
-        </ul>
-        <a href="contact.html" class="btn btn-primary">Get a Free Estimate</a>
-      </div>
-    </div>
-
-    <!-- Water Heater -->
-    <div class="service-detail fade-in">
-      <div class="service-detail-image">
-        <div class="big-icon">🌡️</div>
-        <h3>Water Heater Installation</h3>
-        <div class="price-badge">Same-Day Available</div>
-      </div>
-      <div class="service-detail-content">
-        <p>Is your water heater failing, inefficient, or just old? We install, replace, and repair all makes and models of tank and tankless water heaters. Cold showers are never fun — we'll get you hot water back fast.</p>
-        <p>We carry major brands in stock for same-day replacement on most standard units. Energy-efficient upgrades available to lower your utility bills.</p>
-        <ul>
-          <li>Tank water heater installation (all sizes)</li>
-          <li>Tankless / on-demand water heater install</li>
-          <li>Same-day emergency replacement</li>
-          <li>Gas &amp; electric water heater service</li>
-          <li>Annual maintenance &amp; flushing</li>
-          <li>Thermostat &amp; element repair</li>
-          <li>Energy-efficient upgrade consultation</li>
-        </ul>
-        <a href="contact.html" class="btn btn-primary">Schedule Installation</a>
-      </div>
-    </div>
-
-    <!-- Emergency Plumbing -->
-    <div class="service-detail fade-in">
-      <div class="service-detail-image">
-        <div class="big-icon">🚨</div>
-        <h3>Emergency Plumbing</h3>
-        <div class="price-badge">24/7 Available</div>
-      </div>
-      <div class="service-detail-content">
-        <p>Plumbing emergencies don't follow business hours. That's why ClearFlow offers true 24/7 emergency service — including nights, weekends, and holidays. We're on call when you need us most.</p>
-        <p>Our emergency team arrives within 60 minutes for most service areas. We come prepared with all the common parts and tools to resolve most emergencies in a single visit.</p>
-        <ul>
-          <li>Burst &amp; flooding pipe response</li>
-          <li>Sewage backup &amp; overflow</li>
-          <li>Complete loss of water pressure</li>
-          <li>Gas line emergencies</li>
-          <li>Toilet overflows</li>
-          <li>Water heater failure</li>
-          <li>Storm &amp; flood water damage assistance</li>
-        </ul>
-        <a href="tel:+15551234567" class="btn btn-primary">📞 Call Now — We're Ready</a>
-      </div>
-    </div>
-
-    <!-- Leak Detection -->
-    <div class="service-detail fade-in">
-      <div class="service-detail-image">
-        <div class="big-icon">🔍</div>
-        <h3>Leak Detection</h3>
-        <div class="price-badge">Non-Invasive Tech</div>
-      </div>
-      <div class="service-detail-content">
-        <p>Hidden leaks can silently destroy your home's structure and rack up your water bill for months before they're noticed. Our advanced, non-invasive leak detection technology pinpoints leaks without tearing out walls or floors.</p>
-        <p>We use acoustic listening devices, thermal imaging, and moisture meters to locate leaks behind walls, under slabs, and underground.</p>
-        <ul>
-          <li>Acoustic &amp; electronic leak detection</li>
-          <li>Thermal imaging camera inspection</li>
-          <li>Slab leak detection &amp; repair</li>
-          <li>Underground water main leak location</li>
-          <li>Pool &amp; irrigation system leak detection</li>
-          <li>Water meter &amp; bill audit</li>
-          <li>Post-repair verification testing</li>
-        </ul>
-        <a href="contact.html" class="btn btn-primary">Schedule Detection</a>
-      </div>
-    </div>
-
   </div>
-</section>
-
-<!-- Our Process -->
-<section class="section section-alt">
-  <div class="container">
-    <h2 class="section-title">How It Works</h2>
-    <p class="section-subtitle">Simple, straightforward service from first call to final cleanup.</p>
-    <div class="process-grid">
-      <div class="process-step fade-in">
-        <div class="step-number">1</div>
-        <h3>Call or Book Online</h3>
-        <p>Call us any time or use our contact form. We'll confirm your appointment within minutes.</p>
-      </div>
-      <div class="process-step fade-in">
-        <div class="step-number">2</div>
-        <h3>We Diagnose</h3>
-        <p>A licensed plumber arrives on time, assesses the issue thoroughly, and explains what's needed.</p>
-      </div>
-      <div class="process-step fade-in">
-        <div class="step-number">3</div>
-        <h3>Upfront Quote</h3>
-        <p>You receive a clear, itemized quote. No work starts until you approve it — no surprises.</p>
-      </div>
-      <div class="process-step fade-in">
-        <div class="step-number">4</div>
-        <h3>Problem Solved</h3>
-        <p>We complete the job, clean up completely, and follow up to ensure you're 100% satisfied.</p>
-      </div>
+  <div class="process-row container-wide fade-in">
+    <div class="process-step">
+      <span class="step-num">01</span>
+      <h3>Call or Book Online</h3>
+      <p>Call us anytime or use our contact form. We confirm your appointment within minutes.</p>
+    </div>
+    <div class="process-step">
+      <span class="step-num">02</span>
+      <h3>We Diagnose</h3>
+      <p>A licensed plumber arrives on time, assesses the issue, and explains what's needed.</p>
+    </div>
+    <div class="process-step">
+      <span class="step-num">03</span>
+      <h3>Upfront Quote</h3>
+      <p>You receive a clear itemized quote. No work starts until you approve it.</p>
+    </div>
+    <div class="process-step">
+      <span class="step-num">04</span>
+      <h3>Problem Solved</h3>
+      <p>We complete the job, clean up completely, and follow up to ensure you're satisfied.</p>
     </div>
   </div>
 </section>
 
-<!-- CTA Banner -->
-<section class="cta-banner">
-  <div class="container">
-    <h2>Not Sure What Service You Need?</h2>
-    <p>Give us a call and we'll help you figure it out — no pressure, no obligation.</p>
-    <div class="cta-buttons">
-      <a href="tel:+15551234567" class="btn btn-outline btn-lg">📞 (555) 123-4567</a>
-      <a href="contact.html" class="btn btn-primary btn-lg" style="background:#fff;color:var(--red);">Send Us a Message</a>
+<!-- CTA -->
+<section class="section section-gray" style="text-align:center;">
+  <div class="container-narrow fade-in">
+    <span class="eyebrow">Get Started</span>
+    <h2>Not sure which service you need?</h2>
+    <p class="subhead subhead-center" style="margin-top:0.75rem;margin-bottom:2.5rem;">Give us a call and we'll help you figure it out — no pressure, no obligation.</p>
+    <div style="display:flex;gap:0.75rem;justify-content:center;flex-wrap:wrap;">
+      <a href="tel:+15551234567" class="btn btn-black btn-lg">Call (555) 123-4567</a>
+      <a href="contact.html" class="btn btn-outline btn-lg">Send a Message</a>
     </div>
   </div>
 </section>
 
-<!-- Footer -->
+<!-- FOOTER -->
 <footer>
   <div class="footer-grid">
     <div class="footer-brand">
@@ -306,11 +294,11 @@
       <p>Serving the greater Ohio area since 2003. Licensed, insured, and committed to doing the job right the first time.</p>
     </div>
     <div>
-      <h4>Quick Links</h4>
+      <h4>Company</h4>
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="services.html">Services</a></li>
-        <li><a href="about.html">About Us</a></li>
+        <li><a href="about.html">About</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </div>
@@ -320,21 +308,21 @@
         <li><a href="services.html">Drain Cleaning</a></li>
         <li><a href="services.html">Pipe Repair</a></li>
         <li><a href="services.html">Water Heaters</a></li>
-        <li><a href="services.html">Emergency Plumbing</a></li>
+        <li><a href="services.html">Emergency</a></li>
         <li><a href="services.html">Leak Detection</a></li>
       </ul>
     </div>
     <div>
-      <h4>Contact Us</h4>
+      <h4>Contact</h4>
       <div class="footer-contact-item"><span class="fc-icon">📞</span> (555) 123-4567</div>
       <div class="footer-contact-item"><span class="fc-icon">✉️</span> info@clearflowplumbing.com</div>
-      <div class="footer-contact-item"><span class="fc-icon">📍</span> 412 Waterway Blvd,<br>Columbus, OH 43215</div>
-      <div class="footer-contact-item"><span class="fc-icon">🕐</span> Mon–Fri: 7am–8pm<br>Sat–Sun: 8am–6pm</div>
+      <div class="footer-contact-item"><span class="fc-icon">📍</span> 412 Waterway Blvd, Columbus OH</div>
+      <div class="footer-contact-item"><span class="fc-icon">🕐</span> Mon–Fri 7am–8pm · Sat–Sun 8am–6pm</div>
     </div>
   </div>
   <div class="footer-bottom">
-    <span>&copy; 2026 ClearFlow Plumbing. All rights reserved.</span>
-    <span>Designed with ❤️ for our community</span>
+    <span>© 2026 ClearFlow Plumbing. All rights reserved.</span>
+    <span>Columbus, Ohio</span>
   </div>
 </footer>
 
